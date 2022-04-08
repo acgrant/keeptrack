@@ -1,10 +1,12 @@
 import './App.css';
 import ProjectsPage from './projects/ProjectsPage';
 
+export default App;
+
 function App() {
   return (
-      <ProjectsPage />
-  );
+      <div className='container'>
+          <ProjectsPage />
+      </div>
+);
 }
-
-export default App;
