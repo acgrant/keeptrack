@@ -1,4 +1,5 @@
 const fs = require('fs');
+const MockProjectsJSON = require('../projects/MockProjects.json');
 
 const scraperObject = {
     url: 'https://randompatientgenerator.netlify.app/',
@@ -11,6 +12,7 @@ const scraperObject = {
         // let patientCount = 0;
         // while (patientCount < 10) {
             await page.click('a.button');
+
             const patients = await page.evaluate(() => {
                 const patientStats = [];
                 const patient = {};
@@ -35,10 +37,11 @@ const scraperObject = {
             });
             // patientCount++;
         // }
-        fs.writeFile('../projects/MockProjects.json', JSON.stringify(patients, null, 4), (err) => {
+        fs.writeFile('../projects/MockProjects.json', (JSON.stringify([...MockProjectsJSON,...patients], null, 4)), (err) => {
             if (err) throw err;
             else console.log('Data successfully appended.');
         });
+        console.log(typeof MockProjectsJSON)
     }
 }
 
