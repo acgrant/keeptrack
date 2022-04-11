@@ -8,11 +8,11 @@ const scraperObject = {
         await page.goto(this.url);
         await page.waitForSelector('a.button');
         await page.waitForSelector('#age');
-        let patientCount = 0;
-        while (patientCount < 10) {
+        // let patientCount = 0;
+        // while (patientCount < 10) {
             await page.click('a.button');
-            await page.evaluate(() => {
-                const patients = [];
+            const patients = await page.evaluate(() => {
+                const patientStats = [];
                 const patient = {};
                 document.querySelectorAll('p2')
                     .forEach((element, idx) => {
@@ -30,11 +30,12 @@ const scraperObject = {
                             default: console.log('Patient added.')
                         }
                     });
-                patients.push(patient);
+                patientStats.push(patient);
+                return patientStats;
             });
-            patientCount++;
-        }
-        fs.writeFile('../projects/MockProjects.json', JSON.stringify({'I': 'exist'}, null, 4), (err) => {
+            // patientCount++;
+        // }
+        fs.writeFile('../projects/MockProjects.json', JSON.stringify(patients, null, 4), (err) => {
             if (err) throw err;
             else console.log('Data successfully appended.');
         });

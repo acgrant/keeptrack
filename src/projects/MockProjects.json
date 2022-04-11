@@ -1,3 +1,14 @@
-{
-    "I": "exist"
-}
+[
+    {
+        "age": "25yrs",
+        "sex": "Male",
+        "chief_complaint": "Blanching Rash",
+        "heart_rate": "136 irregular",
+        "blood_pressure": "106/67",
+        "temperature": "40.1C/104.2F",
+        "respiratory_rate": "15",
+        "oxygen_saturation": "92% on RA",
+        "history_1": "Drunk",
+        "history_2": "Speaks Little English"
+    }
+]
