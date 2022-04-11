@@ -1,0 +1,98 @@
+[
+    {
+        "age": "68yrs",
+        "sex": "Female",
+        "chief_complaint": "Acute Confusion",
+        "heart_rate": "123 regular",
+        "blood_pressure": "87/57",
+        "temperature": "40.1C/104.2F",
+        "respiratory_rate": "18",
+        "oxygen_saturation": "92% on RA",
+        "history_1": "Drunk",
+        "history_2": "Bed Bound"
+    },
+    {
+        "age": "45yrs",
+        "sex": "Female",
+        "chief_complaint": "Abdominal Pain",
+        "heart_rate": "56 regular",
+        "blood_pressure": "123/87",
+        "temperature": "35.2C/95.4F",
+        "respiratory_rate": "15",
+        "oxygen_saturation": "95% on RA",
+        "history_1": "On Chemotherapy",
+        "history_2": "Previous Bowel Cancer"
+    },
+    {
+        "age": "91yrs",
+        "sex": "Female",
+        "chief_complaint": "Headache",
+        "heart_rate": "56 regular",
+        "blood_pressure": "167/101",
+        "temperature": "37.9C/100.2F",
+        "respiratory_rate": "22",
+        "oxygen_saturation": "93% on RA",
+        "history_1": "Family History of Bowel Cancer",
+        "history_2": "Speaks Little English"
+    },
+    {
+        "age": "46yrs",
+        "sex": "Female",
+        "chief_complaint": "Difficulty Walking",
+        "heart_rate": "136 irregular",
+        "blood_pressure": "96/58",
+        "temperature": "36.7C/98.1F",
+        "respiratory_rate": "18",
+        "oxygen_saturation": "88% on RA",
+        "history_1": "Migraines",
+        "history_2": "MI x 3"
+    },
+    {
+        "age": "19yrs",
+        "sex": "Female",
+        "chief_complaint": "Back Pain",
+        "heart_rate": "104 regular",
+        "blood_pressure": "123/87",
+        "temperature": "35.6C/96.1F",
+        "respiratory_rate": "18",
+        "oxygen_saturation": "96% on RA",
+        "history_1": "Family History of Bowel Cancer",
+        "history_2": "Alcoholic"
+    },
+    {
+        "age": "83yrs",
+        "sex": "Male",
+        "chief_complaint": "Blanching Rash",
+        "heart_rate": "56 regular",
+        "blood_pressure": "113/75",
+        "temperature": "35.2C/95.4F",
+        "respiratory_rate": "14",
+        "oxygen_saturation": "92% on RA",
+        "history_1": "Family History of Bowel Cancer",
+        "history_2": "Pregnant"
+    },
+    {
+        "age": "45yrs",
+        "sex": "Male",
+        "chief_complaint": "Abdominal Pain",
+        "heart_rate": "56 regular",
+        "blood_pressure": "145/85",
+        "temperature": "36.7C/98.1F",
+        "respiratory_rate": "12",
+        "oxygen_saturation": "100% on 35% O2",
+        "history_1": "Family History of Bowel Cancer",
+        "history_2": "Previous Bowel Cancer"
+    },
+    {
+        "age": "45yrs",
+        "sex": "Male",
+        "chief_complaint": "Abdominal Pain",
+        "heart_rate": "143 regular",
+        "blood_pressure": "180/125",
+        "temperature": "40.1C/104.2F",
+        "respiratory_rate": "29",
+        "oxygen_saturation": "96% on RA",
+        "history_1": "HIV Positive",
+        "history_2": "Diabetic"
+    }
+]

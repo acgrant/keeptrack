@@ -1,3 +1,6 @@
+const fs = require('fs');
+const MockProjectsJSON = require('../projects/MockPatients.json');
+
 const scraperObject = {
     url: 'https://randompatientgenerator.netlify.app/',
     async scraper (browser) {
@@ -6,39 +9,40 @@ const scraperObject = {
         await page.goto(this.url);
         await page.waitForSelector('a.button');
         await page.waitForSelector('#age');
-        await page.click('a.button');
-        const stats = await page.evaluate(() => {
-            let patients = [];
-            document.querySelectorAll('p2')
-                .forEach((element, idx) => {
-                    patients.push({
-                        idx: element.textContent
-                    })
-                })
+        let patientCount = 0;
+        while (patientCount < 10) {
+            await page.click('a.button');
 
-            //
-            // age: '#age',
-            //     sex: '#sex',
-            //     chief_complaint: '#cc',
-            //     heart_rate: '#hr',
-            //     temperature: '#temp',
-            //     respiratory_rate: '#rr',
-            //     oxygen_saturation: '#sat',
-            //     history_1: '#pmh1',
-            //     history_2: '#pmh2',
-            // const patient = {};
-            // patient['age'] = document.getElementById('#age');
-            // patient['sex'] = document.getElementById('#sex');
-            // patient['chief_complaint'] = document.getElementById('#cc');
-            // patient['heart_rate'] = document.getElementById('#hr');
-            // patient['temperature'] = document.getElementById('#temp');
-            // patient['respiratory_rate'] = document.getElementByIdr('#rr');
-            // patient['oxygen_saturation'] = document.getElementById('#sat');
-            // patient['history_1'] = document.getElementById('#pmh1');
-            // patient['history_2'] = document.getElementById('#pmh2');
-            return patients;
-        })
-        console.log(stats)
+            const patients = await page.evaluate(() => {
+                const patientStats = [];
+                const patient = {};
+                document.querySelectorAll('p2')
+                    .forEach((element, idx) => {
+                        switch (idx) {
+                            case 1: patient['age'] = element.textContent;
+                            case 2: patient['sex'] = element.textContent;
+                            case 3: patient['chief_complaint'] = element.textContent;
+                            case 4: patient['heart_rate'] = element.textContent;
+                            case 5: patient['blood_pressure'] = element.textContent;
+                            case 6: patient['temperature'] = element.textContent;
+                            case 7: patient['respiratory_rate'] = element.textContent;
+                            case 8: patient['oxygen_saturation'] = element.textContent;
+                            case 9: patient['history_1'] = element.textContent;
+                            case 10: patient['history_2'] = element.textContent;
+                            default: console.log('Patient added.')
+                        }
+                    });
+                patientStats.push(patient);
+                return patientStats;
+            });
+            // const patientBatch = MockProjectsJSON.length < 10 ? MockProjectsJSON : []
+            // console.log(patientBatch)
+            await fs.writeFile('../projects/MockPatients.json', (JSON.stringify([...MockProjectsJSON,...patients], null, 4)), (err) => {
+                if (err) throw err;
+                else console.log(`${JSON.stringify(patients)} successfully appended.`);
+            });
+            patientCount++;
+        }
     }
 }
 

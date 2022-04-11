@@ -1,0 +1,10 @@
+.projects-page-container {
+    background-color: orangered;
+    /*width: 100%;*/
+    text-align: center;
+}
+
+.projects-page-container *:hover {
+    color: green;
+    background-color: lightblue;
+}
